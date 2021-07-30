@@ -1,0 +1,41 @@
+:root {
+  --SideBar_Content_BackgroundColor-: rgb(243, 241, 241);
+}
+#SideBar_Container {
+  /* border: 1px solid red; */
+  display: inline-block;
+  height: 100vh;
+  width: 280px;
+  position: fixed;
+  margin-top: 65px;
+  background-color: rgb(241, 241, 241);
+}
+
+.SideBar_Content_Outline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  /* border: 1px solid black; */
+  border-radius: 0px 25px 25px 0px;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
+.SideBar_Content_Outline:hover {
+  background-color: var(--SideBar_Content_BackgroundColor-);
+}
+
+.SideBar_Lebal {
+  position: absolute;
+  left: 25%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: black;
+}
+
+.SideBar_Logo {
+  margin: 0px 0px 0px 15px;
+  color: black;
+}

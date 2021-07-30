@@ -1,0 +1,225 @@
+#NotePage_Container {
+  /* border: 1px solid red; */
+  position: absolute;
+  width: calc(100% - 280px);
+  right: 0;
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#TakingNote_Outline_MinView {
+  width: 700px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px 0px 40px 0px;
+  box-shadow: 0px 0px 7px rgb(155, 155, 155);
+  border-radius: 5px;
+}
+
+#MinView_TakingNote_Input_Field {
+  width: 500px;
+  height: 40px;
+  border-width: 0;
+}
+#MinView_TakingNote_Input_Field:focus {
+  outline: none;
+}
+#MinView_TakingNote_Input_Field:read-write {
+  font-size: 15px;
+}
+#MinView_TakingNote_Input_Field::placeholder {
+  font-size: 15px;
+}
+
+.MinView_TakingNote_Icons_Outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 150ms;
+}
+.MinView_TakingNote_Icons_Outline:hover {
+  background-color: rgb(233, 231, 231);
+}
+.MinView_TakingNote_Icons {
+  color: rgb(94, 94, 94);
+}
+
+#MaxView_TakingNote_Outline {
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px 40px 0px;
+  box-shadow: 0px 0px 7px rgb(155, 155, 155);
+  border-radius: 5px;
+}
+
+#Maxview_TakingNote_Title_Outline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#MaxView_TakingNote_Title_InputField {
+  width: 620px;
+  height: 40px;
+  border: none;
+}
+#MaxView_TakingNote_Title_InputField:focus {
+  outline: none;
+}
+#MaxView_TakingNote_Title_InputField::placeholder {
+  font-size: 15px;
+}
+#MaxView_TakingNote_Title_InputField:read-write {
+  font-size: 15px;
+}
+#MaxView_TakingNote_Note_Inputfield {
+  width: 620px;
+  height: 40px;
+  border: none;
+}
+#MaxView_TakingNote_Note_Inputfield:focus {
+  outline: none;
+}
+
+#MaxView_TakingNote_Note_Inputfield::placeholder {
+  font-size: 15px;
+}
+#MaxView_TakingNote_Note_Inputfield:read-write {
+  font-size: 15px;
+}
+#MaxView_TakingNote_Icon_Container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px 10px 0px;
+}
+
+.MaxView_TakingNote_Button_Outline {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+.MaxView_TakingNote_Button_Outline:hover {
+  background-color: rgb(233, 231, 231);
+}
+.MaxView_TakingNote_Button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.MaxView_TakingNote_Icons_Outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 150ms;
+}
+.MaxView_TakingNote_Icons_Outline:hover {
+  background-color: rgb(233, 231, 231);
+}
+.MaxView_TakingNote_Icons {
+  color: rgb(94, 94, 94);
+}
+#MaxView_TakingNote_Add_Button_Outline {
+  margin-left: 150px;
+}
+
+#NotePage_Card_Container {
+  /* border: 1px solid red; */
+  width: calc(100% - 100px);
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+#Card_Outline {
+  border: 1px solid black;
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  border-radius: 10px;
+  border-color: rgb(189, 189, 189);
+  box-shadow: 0px 0px 5px rgb(207, 207, 207);
+  cursor: pointer;
+  transition-duration: 200ms;
+  height: fit-content;
+}
+#Card_Outline:hover {
+  box-shadow: 0px 0px 15px rgb(207, 207, 207);
+  transform: scale(1.01);
+}
+#Card_Title {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  word-wrap: break-word;
+}
+#Card_Notes {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.Card_Notes_Icons {
+  visibility: visible;
+}
+
+#Card_Note_Icon_Container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0px;
+  margin: 10px 0px 10px 0px;
+}
+
+#Card_Empty_Note {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgb(151, 151, 151);
+  margin: 10px;
+}
+
+#Color_Picker_Container {
+  display: flex;
+  position: absolute;
+  transform: translate(40%, -70%);
+  box-shadow: 0px 0px 5px rgb(170, 170, 170);
+  background-color: white;
+  border-radius: 5px;
+}
+
+#ColorComponent_Container {
+  margin: 3px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 110px;
+  cursor: pointer;
+  transition-duration: 150ms;
+  filter: opacity(0.8);
+  box-shadow: 0px 0px 5px rgb(207, 207, 207);
+}
+#ColorComponent_Container:hover {
+  border-color: black;
+}
