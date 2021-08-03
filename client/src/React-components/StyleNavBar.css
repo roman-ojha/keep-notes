@@ -83,6 +83,7 @@
 #NavBar_UserImg {
   width: 2.2em;
   height: 65%;
+  cursor: pointer;
 }
 #NavBar_LeftItem {
   display: flex;

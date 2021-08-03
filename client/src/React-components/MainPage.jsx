@@ -6,18 +6,28 @@ import ReminderPage from "./ReminderPage";
 import EditLabelsPage from "./EditLabelsPage";
 import ArchivePage from "./ArchivePage";
 import TrashPage from "./TrashPage";
+import LogOutPage from "./LogOutPage";
+
+const RoutingMainPage = () => {
+  return (
+    <>
+      <Switch>
+        <Route path="/u/notes" component={NotesPage} />
+        <Route path="/u/reminders" component={ReminderPage} />
+        <Route path="/u/editlabels" component={EditLabelsPage} />
+        <Route path="/u/archive" component={ArchivePage} />
+        <Route path="/u/trash" component={TrashPage} />
+        <Route path="/u/logout" component={LogOutPage} />
+      </Switch>
+    </>
+  );
+};
 
 const MainPage = () => {
   return (
     <>
       <SideBar />
-      <Switch>
-        <Route path="/notes" component={NotesPage} />
-        <Route path="/reminders" component={ReminderPage} />
-        <Route path="/editlabels" component={EditLabelsPage} />
-        <Route path="/archive" component={ArchivePage} />
-        <Route path="/trash" component={TrashPage} />
-      </Switch>
+      <RoutingMainPage />
     </>
   );
 };

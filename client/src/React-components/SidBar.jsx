@@ -12,7 +12,7 @@ const SideBar = () => {
   return (
     <>
       <div id="SideBar_Container">
-        <NavLink to="/notes">
+        <NavLink to="/u/notes">
           <div
             className="SideBar_Content_Outline"
             id="SideBar_Notes_Outline"
@@ -41,7 +41,7 @@ const SideBar = () => {
             </h3>
           </div>
         </NavLink>
-        <NavLink to="/reminders">
+        <NavLink to="/u/reminders">
           <div
             className="SideBar_Content_Outline"
             id="SideBar_Reminder_Outline"
@@ -69,7 +69,7 @@ const SideBar = () => {
             </h3>
           </div>
         </NavLink>
-        <NavLink to="/editlabels">
+        <NavLink to="/u/editlabels">
           <div
             className="SideBar_Content_Outline"
             id="SideBar_EditLabels_Outline"
@@ -98,7 +98,7 @@ const SideBar = () => {
             </h3>
           </div>
         </NavLink>
-        <NavLink to="/archive">
+        <NavLink to="/u/archive">
           <div
             className="SideBar_Content_Outline"
             id="SideBar_Archive_Outline"
@@ -127,7 +127,7 @@ const SideBar = () => {
             </h3>
           </div>
         </NavLink>
-        <NavLink to="/trash">
+        <NavLink to="/u/trash">
           <div
             className="SideBar_Content_Outline"
             id="SideBar_Trash_Outline"

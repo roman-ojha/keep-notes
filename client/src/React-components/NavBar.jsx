@@ -10,6 +10,7 @@ import AppsIcon from "@material-ui/icons/Apps";
 import UserImg from "../image/UserImg.png";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
+import UserAccount from "./UserAccount";
 
 const NavBar = () => {
   const [listGrid, updateListGrid] = useState(true);
@@ -73,6 +74,15 @@ const NavBar = () => {
       },
     ]);
     console.log("hello");
+  };
+  const [switchUserAccountState, updatSewitchUserAccountState] =
+    useState(false);
+  const switchUserAccount = () => {
+    if (switchUserAccountState == false) {
+      updatSewitchUserAccountState(true);
+    } else {
+      updatSewitchUserAccountState(false);
+    }
   };
   return (
     <>
@@ -146,7 +156,13 @@ const NavBar = () => {
               style={{ fontSize: "30px" }}
             />
           </div>
-          <img id="NavBar_UserImg" src={UserImg} alt="UserImg" />
+          <img
+            id="NavBar_UserImg"
+            src={UserImg}
+            alt="UserImg"
+            onClick={switchUserAccount}
+          />
+          {switchUserAccountState ? <UserAccount /> : null}
         </div>
       </div>
     </>

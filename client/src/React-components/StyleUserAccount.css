@@ -1,0 +1,99 @@
+:root {
+  --font_Family-: "Montserrat", sans-serif;
+}
+
+#UserAccount_Container {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 61px;
+  right: 5px;
+  z-index: 3;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(170, 170, 170);
+  border: 1px solid rgb(163, 163, 163);
+}
+#UserAccount_UserImage {
+  width: 75px;
+  height: 75px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#UserAccount_UserInformation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#UserAccount_userName {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font_Family-);
+}
+#UserAccount_userEmail {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font_Family-);
+}
+#UserAccount_Manage_Account_Button {
+  width: 65%;
+  height: 35px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(223, 223, 223);
+  cursor: pointer;
+  transition-duration: 100ms;
+  font-family: var(--font_Family-);
+  font-weight: 500;
+}
+#UserAccount_Manage_Account_Button:hover {
+  background-color: rgb(235, 235, 235);
+}
+#UserAccount_SignOut_Container {
+  width: 100%;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: rgb(197, 196, 196);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#UserAccount_SignOut_Button_Outline {
+  width: 60%;
+  height: 35px;
+  margin: 15px 0px 15px 0px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(233, 241, 224);
+  cursor: pointer;
+  transition-duration: 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#UserAccount_SignOut_Button_Outline:hover {
+  background-color: rgb(235, 248, 226);
+}
+#UserAccount_SignOut_Button {
+  font-family: var(--font_Family-);
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+
+#UserAccount_PrivacyPolicy {
+  margin-bottom: 20px;
+  font-family: var(--font_Family-);
+  font-size: 13px;
+  font-weight: 500;
+  transition-duration: 50ms;
+  cursor: pointer;
+}
+#UserAccount_PrivacyPolicy:hover {
+  text-decoration: underline;
+}

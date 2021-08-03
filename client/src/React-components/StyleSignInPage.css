@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#SignIn_Page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50;
+  background-color: rgb(244, 247, 244);
+}
+#SignIn_Page_Container {
+  width: 500px;
+  height: 550px;
+  box-shadow: 0px 0px 10px rgb(179, 179, 179);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+}
+#SignIn_Page_Logo_and_Title {
+  display: flex;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#SignIn_Page_NoteIcon {
+  color: #eec041;
+  cursor: pointer;
+  transform: rotate(-90deg);
+}
+
+#SignIn_Page_KeepNote_Title {
+  font-family: var(--font_Family-);
+  font-weight: 500;
+  margin: 20px;
+}
+#SignIn_Page_SignIn_Title {
+  font-family: var(--font_Family-);
+  font-weight: 500;
+  margin-top: 25px;
+}
+#SignIn_Page_Form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.SignIn_Page_Input_Field {
+  display: block;
+  width: 400px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(145, 145, 145);
+  box-shadow: 0px 0px 5px rgb(219, 219, 219);
+}
+.SignIn_Page_Input_Field:first-child {
+  margin-top: 60px;
+}
+.SignIn_Page_Input_Field:focus {
+  outline: none;
+  background-color: #e1e5f0;
+  box-shadow: 0px 0px 5px #cfd9f1;
+  border-color: #1e43aa;
+  border-width: 1.5px;
+}
+.SignIn_Page_Input_Field:read-write {
+  padding-left: 15px;
+  font-size: 15px;
+}
+#SignIn_Page_SignIn_Button {
+  width: 100px;
+  height: 35px;
+  margin: 15px;
+  background-color: #1e43aa;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+#SignIn_Page_SignIn_Button:hover {
+  background-color: #3055bd;
+}
+#SizeIn_Page_CreateAccount_Button {
+  font-family: var(--font_Family-);
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e43aa;
+  margin-top: 20px;
+  cursor: pointer;
+  transition-duration: 50ms;
+}
+#SizeIn_Page_CreateAccount_Button:hover {
+  text-decoration: underline;
+}
