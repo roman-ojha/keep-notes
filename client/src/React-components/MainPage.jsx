@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SideBar from "./SidBar";
-import { Route, Switch } from "react-router";
+import { Route, Switch, useHistory } from "react-router";
 import NotesPage from "./NotesPage";
 import ReminderPage from "./ReminderPage";
 import EditLabelsPage from "./EditLabelsPage";
@@ -24,6 +24,33 @@ const RoutingMainPage = () => {
 };
 
 const MainPage = () => {
+  const history = useHistory();
+  const callMainPage = async () => {
+    try {
+      const res = await fetch("/u", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Contact-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const data = await res.json();
+      // now in this data we got the all data from the data base so, now we will going to use for the about page
+      console.log(data);
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
+      console.log(err);
+      console.log("error");
+      history.push("/signin");
+    }
+  };
+  useEffect(() => {
+    callMainPage();
+  }, []);
   return (
     <>
       <SideBar />

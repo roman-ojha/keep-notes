@@ -19,7 +19,7 @@ const UserAccount = () => {
         />
         <div id="UserAccount_SignOut_Container">
           <div id="UserAccount_SignOut_Button_Outline">
-            <NavLink id="UserAccount_SignOut_Button" to="/logout">
+            <NavLink id="UserAccount_SignOut_Button" to="/u/logout">
               Sign Out Account
             </NavLink>
           </div>

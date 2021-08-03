@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const KeepNoteAppUserData = require("../models/userSchema");
 const bcrypt = require("bcryptjs");
+const authenticate = require("../middleware/authenticate");
 
 require("../db/dbConnection");
 
@@ -48,7 +49,6 @@ router.post("/signin", async (req, res) => {
         .json({ error: "Error Login!!! User doesn't exist" });
     }
     const isPasswordMatch = await bcrypt.compare(password, userLogin.password);
-    console.log(token);
     if (!isPasswordMatch) {
       return res
         .status(400)
@@ -64,6 +64,15 @@ router.post("/signin", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.get("/u", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+
+router.get("/u/logout", authenticate, (req, res) => {
+  res.clearCookie("KeepNoteAppUserToken", { path: "/" });
+  res.status(200).send("User LogOut");
 });
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+var jwt = require("jsonwebtoken");
 const KeepNoteAppUserData = require("../models/userSchema");
 
 const authenticate = async (req, res, next) => {
