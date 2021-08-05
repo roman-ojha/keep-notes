@@ -9,6 +9,7 @@ require("../db/dbConnection");
 
 router.post("/register", async (req, res) => {
   const { username, email, phone, password, cpassword } = req.body;
+  const keygenerator = 0;
   if (!username || !email || !phone || !password || !cpassword) {
     return res.status(422).json({ error: "Please Fill the Filed Properly" });
   }
@@ -26,10 +27,11 @@ router.post("/register", async (req, res) => {
       phone,
       password,
       cpassword,
+      keygenerator,
     });
     const userRegister = await userData.save();
     res.status(201).json({ message: "User Register Successfully" });
-    console.log(userRegister);
+    // console.log(userRegister);
   } catch (err) {
     console.log(err);
   }
@@ -59,7 +61,7 @@ router.post("/signin", async (req, res) => {
       expires: new Date(Date.now() + 25892000000),
       httpOnly: true,
     });
-    console.log(token);
+    // console.log(token);
     res.status(200).json({ message: "Login Successfully" });
   } catch (err) {
     console.log(err);
@@ -67,12 +69,43 @@ router.post("/signin", async (req, res) => {
 });
 
 router.get("/u", authenticate, (req, res) => {
+  // console.log(req.rootUser);
   res.send(req.rootUser);
 });
 
 router.get("/u/logout", authenticate, (req, res) => {
   res.clearCookie("KeepNoteAppUserToken", { path: "/" });
   res.status(200).send("User LogOut");
+});
+
+router.post("/u/notes", authenticate, async (req, res) => {
+  let noteValue = req.body;
+  try {
+    const userData = await KeepNoteAppUserData.findOne({
+      _id: req.userID,
+    });
+    userData.keygenerator++;
+    if (!userData) {
+      return res
+        .status(400)
+        .json({ error: "Sorry!! user is not authenticated" });
+    }
+    const userNotes = await userData.addNotes(noteValue);
+    await userData.save();
+    res.status(200).json(userNotes);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.post("/u/deleteNote", authenticate, async (req, res) => {
+  const { id } = req.body;
+  try {
+    const userData = await KeepNoteAppUserData.findOne({ _id: req.userID });
+    const userNotes = await userData.deleteNote(id);
+    await userNotes.save();
+    res.status(200).json(userNotes);
+  } catch (err) {}
 });
 
 module.exports = router;

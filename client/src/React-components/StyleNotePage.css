@@ -142,64 +142,6 @@
   margin-left: 150px;
 }
 
-#NotePage_Card_Container {
-  /* border: 1px solid red; */
-  width: calc(100% - 100px);
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-}
-
-#Card_Outline {
-  border: 1px solid black;
-  display: inline-block;
-  width: 220px;
-  margin: 10px;
-  border-radius: 10px;
-  border-color: rgb(189, 189, 189);
-  box-shadow: 0px 0px 5px rgb(207, 207, 207);
-  cursor: pointer;
-  transition-duration: 200ms;
-  height: fit-content;
-}
-#Card_Outline:hover {
-  box-shadow: 0px 0px 15px rgb(207, 207, 207);
-  transform: scale(1.01);
-}
-#Card_Title {
-  font-size: 15px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  padding: 10px;
-  word-wrap: break-word;
-}
-#Card_Notes {
-  font-size: 15px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  padding: 10px;
-  word-wrap: break-word;
-}
-
-.Card_Notes_Icons {
-  visibility: visible;
-}
-
-#Card_Note_Icon_Container {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  bottom: 0px;
-  margin: 10px 0px 10px 0px;
-}
-
-#Card_Empty_Note {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  color: rgb(151, 151, 151);
-  margin: 10px;
-}
-
 #Color_Picker_Container {
   display: flex;
   position: absolute;
@@ -222,4 +164,75 @@
 }
 #ColorComponent_Container:hover {
   border-color: black;
+}
+
+/* Style NoteCard */
+#NotePage_Card_Container {
+  /* border: 1px solid red; */
+  width: calc(100% - 100px);
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.Card_Outline {
+  border: 1px solid black;
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  border-radius: 10px;
+  border-color: rgb(189, 189, 189);
+  box-shadow: 0px 0px 5px rgb(207, 207, 207);
+  cursor: pointer;
+  transition-duration: 200ms;
+  height: fit-content;
+  position: relative;
+}
+
+.Card_Outline:hover {
+  box-shadow: 0px 0px 15px rgb(207, 207, 207);
+  transform: scale(1.01);
+}
+.Card_Title {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  word-wrap: break-word;
+}
+.Card_Notes {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+.Card_Note_Icon_Container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 0px;
+  margin: 10px 0px 10px 0px;
+}
+
+.Card_Empty_Note {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgb(151, 151, 151);
+  margin: 10px;
+}
+.Card_Note_DeleteNote_Outline {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+}
+.Card_Note_DeleteNote_icon {
+  color: #da3b3b;
+  font-size: 30px;
+}
+.Card_Note_DeleteNote_icon:hover {
+  transform: scale(1.2);
 }

@@ -76,7 +76,7 @@ const SignInPage = () => {
           <form id="SignIn_Page_Form">
             <input
               type="email"
-              class="SignIn_Page_Input_Field"
+              className="SignIn_Page_Input_Field"
               placeholder="Email"
               name="email"
               value={userSignInData.gmail}
@@ -84,7 +84,7 @@ const SignInPage = () => {
             />
             <input
               type="password"
-              class="SignIn_Page_Input_Field"
+              className="SignIn_Page_Input_Field"
               placeholder="Password"
               name="password"
               value={userSignInData.password}

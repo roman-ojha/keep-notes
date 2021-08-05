@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Route, Switch } from "react-router";
 import RegisterPage from "./React-components/RegisterPage";
 import SignInPage from "./React-components/SignInPage";
+import HomePage from "./React-components/HomePage";
 
 const LoggedInPage = () => {
   return (
@@ -19,6 +20,7 @@ const RoutingSignInSignOutPage = () => {
   return (
     <>
       <Switch>
+        <Route exact path="/" component={HomePage} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/signin" component={SignInPage} />
         <Route path="/u" component={LoggedInPage} />

@@ -30,6 +30,10 @@ const userSchema = new mongoose.Schema({
   },
   notes: [
     {
+      key: {
+        type: Number,
+        require: true,
+      },
       title: {
         type: String,
       },
@@ -45,6 +49,10 @@ const userSchema = new mongoose.Schema({
       },
     },
   ],
+  keygenerator: {
+    type: Number,
+    require: true,
+  },
   tokens: [
     {
       token: {
@@ -69,6 +77,30 @@ userSchema.methods.generateAuthToken = async function () {
     this.tokens = this.tokens.concat({ token: token });
     await this.save();
     return token;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+userSchema.methods.addNotes = async function (noteValue) {
+  try {
+    this.notes.unshift(noteValue);
+    await this.save();
+    return this.notes;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+userSchema.methods.deleteNote = async function (key) {
+  try {
+    this.notes.map((value, index) => {
+      if (value.key === Number(key)) {
+        this.notes.splice(index, 1);
+      }
+    });
+    await this.save();
+    return this.notes;
   } catch (err) {
     console.log(err);
   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./StyleNotePage.css";
 import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
 import BrushOutlinedIcon from "@material-ui/icons/BrushOutlined";
@@ -13,13 +13,36 @@ import UndoOutlinedIcon from "@material-ui/icons/UndoOutlined";
 import RedoOutlinedIcon from "@material-ui/icons/RedoOutlined";
 import NoteCard from "./NoteCard";
 import CheckIcon from "@material-ui/icons/Check";
+import UserAccount from "./UserAccount";
 
 const NotesPage = () => {
-  if (JSON.parse(localStorage.getItem("notes")) == null) {
-    localStorage.setItem("notes", JSON.stringify([]));
-  }
-  let keygenerator = JSON.parse(localStorage.getItem("notes")).length + 1;
-  let notesStorage = JSON.parse(localStorage.getItem("notes"));
+  const [notesStorage, setNotesStorage] = useState([]);
+  const [keygenerator, setKeygenerator] = useState();
+  const getNotes = async () => {
+    try {
+      const res = await fetch("/u", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const userData = await res.json();
+      setNotesStorage(userData.notes);
+      setKeygenerator(userData.keygenerator);
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getNotes();
+  }, []);
+
   const [swapTakingNote, updateSwapTakingNote] = useState("min");
 
   const MinTakingNote = () => {
@@ -91,10 +114,22 @@ const NotesPage = () => {
         }
       });
     };
-    const saveNote = (noteValue) => {
-      notesStorage = JSON.parse(localStorage.getItem("notes"));
-      notesStorage.unshift(noteValue);
-      localStorage.setItem("notes", JSON.stringify(notesStorage));
+    const saveNote = async (noteData) => {
+      // setKeygenerator(keygenerator + 1);
+      try {
+        const res = await fetch("/u/notes", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(noteData),
+        });
+        if (res.status != 200) {
+        }
+      } catch (err) {
+        console.log(err);
+      }
+      getNotes();
     };
     const ColorComponent = (props) => {
       const CheckColordBox = () => {
@@ -240,7 +275,6 @@ const NotesPage = () => {
                 onClick={() => {
                   updateSwapTakingNote("min");
                   saveNote(getMaxNote);
-                  keygenerator++;
                 }}
               >
                 <h3 className="MaxView_TakingNote_Button">Add</h3>
@@ -285,9 +319,11 @@ const NotesPage = () => {
             return (
               <NoteCard
                 key={value.key}
+                id={value.key}
                 title={value.title}
                 note={value.note}
                 color={value.color}
+                updateNotes={getNotes}
               />
             );
           })}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./StyleNavBar.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import NoteIcon from "@material-ui/icons/Note";
@@ -13,6 +13,32 @@ import CloseIcon from "@material-ui/icons/Close";
 import UserAccount from "./UserAccount";
 
 const NavBar = () => {
+  const [userData, setUserData] = useState({
+    username: "",
+    email: "",
+  });
+  const getUserData = async () => {
+    try {
+      const res = await fetch("/u", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      setUserData(await res.json());
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
   const [listGrid, updateListGrid] = useState(true);
   const SwapListGrid = () => {
     if (listGrid === true) {
@@ -162,7 +188,7 @@ const NavBar = () => {
             alt="UserImg"
             onClick={switchUserAccount}
           />
-          {switchUserAccountState ? <UserAccount /> : null}
+          {switchUserAccountState ? <UserAccount userData={userData} /> : null}
         </div>
       </div>
     </>
