@@ -35,9 +35,7 @@ const MainPage = () => {
         },
         credentials: "include",
       });
-      const data = await res.json();
       // now in this data we got the all data from the data base so, now we will going to use for the about page
-      console.log(data);
       if (!res.status === 200) {
         const error = new Error(res.error);
         throw error;
@@ -50,6 +48,7 @@ const MainPage = () => {
   };
   useEffect(() => {
     callMainPage();
+    console.log("Calling");
   }, []);
   return (
     <>

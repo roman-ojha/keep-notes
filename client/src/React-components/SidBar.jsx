@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./StyleSideBar.css";
 import NotesIcon from "@material-ui/icons/Notes";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -11,7 +11,7 @@ const SideBar = () => {
   let SideBar_Content_Color = "#eec041";
   return (
     <>
-      <div id="SideBar_Container">
+      <div className="SideBar_Container">
         <NavLink to="/u/notes">
           <div
             className="SideBar_Content_Outline"

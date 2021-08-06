@@ -103,7 +103,6 @@ router.post("/u/deleteNote", authenticate, async (req, res) => {
   try {
     const userData = await KeepNoteAppUserData.findOne({ _id: req.userID });
     const userNotes = await userData.deleteNote(id);
-    await userNotes.save();
     res.status(200).json(userNotes);
   } catch (err) {}
 });

@@ -35,7 +35,7 @@ const RegisterPage = () => {
         body: JSON.stringify({ username, email, phone, password, cpassword }),
       });
       const userData = await resUserData.json();
-      if (resUserData.status != 201) {
+      if (resUserData.status !== 201) {
         console.log(userData.error);
         setpopUpMessage({
           message: userData.error,

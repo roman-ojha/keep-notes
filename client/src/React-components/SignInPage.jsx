@@ -34,7 +34,7 @@ const SignInPage = () => {
       body: JSON.stringify({ email, password }),
     });
     const userData = await resUserData.json();
-    if (resUserData.status == 400 || !userData) {
+    if (resUserData.status === 400 || !userData) {
       console.log(userData.error);
       setpopUpMessage({
         message: userData.error,

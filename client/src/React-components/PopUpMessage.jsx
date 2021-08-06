@@ -3,17 +3,17 @@ import "./StylePopUpMessage.css";
 
 const PopUpMessage = (props) => {
   if (document.getElementById("PopUp_Message_Container")) {
-    if (props.getMessage.type == "message") {
+    if (props.getMessage.type === "message") {
       document.getElementById("PopUp_Message_Container").style.backgroundColor =
         "#b2ffb2";
-    } else if (props.getMessage.type == "error") {
+    } else if (props.getMessage.type === "error") {
       document.getElementById("PopUp_Message_Container").style.backgroundColor =
         "rgb(255 187 187)";
     }
-    if (props.getMessage.visible == true) {
+    if (props.getMessage.visible === true) {
       document.getElementById("PopUp_Message_Container").style.visibility =
         "visible";
-    } else if (props.getMessage.visible == false) {
+    } else if (props.getMessage.visible === false) {
       document.getElementById("PopUp_Message_Container").style.visibility =
         "hidden";
     }

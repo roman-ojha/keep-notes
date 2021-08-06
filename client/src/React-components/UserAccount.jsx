@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import UserImage from "../image/UserImg.png";
 import "./StyleUserAccount.css";
 import { NavLink } from "react-router-dom";
@@ -7,7 +7,7 @@ const UserAccount = (props) => {
   return (
     <>
       <div id="UserAccount_Container">
-        <img src={UserImage} id="UserAccount_UserImage" />
+        <img src={UserImage} id="UserAccount_UserImage" alt="Img" />
         <div id="UserAccount_UserInformation">
           <p id="UserAccount_userName">{props.userData.username}</p>
           <p id="UserAccount_userEmail">{props.userData.email}</p>

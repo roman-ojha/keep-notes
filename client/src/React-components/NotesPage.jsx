@@ -13,7 +13,6 @@ import UndoOutlinedIcon from "@material-ui/icons/UndoOutlined";
 import RedoOutlinedIcon from "@material-ui/icons/RedoOutlined";
 import NoteCard from "./NoteCard";
 import CheckIcon from "@material-ui/icons/Check";
-import UserAccount from "./UserAccount";
 
 const NotesPage = () => {
   const [notesStorage, setNotesStorage] = useState([]);
@@ -124,7 +123,7 @@ const NotesPage = () => {
           },
           body: JSON.stringify(noteData),
         });
-        if (res.status != 200) {
+        if (res.status !== 200) {
         }
       } catch (err) {
         console.log(err);
@@ -309,10 +308,9 @@ const NotesPage = () => {
       );
     }
   };
-
   return (
     <>
-      <div id="NotePage_Container">
+      <div className="NotePage_Container">
         <SwapNoteView />
         <div id="NotePage_Card_Container">
           {notesStorage.map((value, index) => {

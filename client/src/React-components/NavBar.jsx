@@ -104,11 +104,16 @@ const NavBar = () => {
   const [switchUserAccountState, updatSewitchUserAccountState] =
     useState(false);
   const switchUserAccount = () => {
-    if (switchUserAccountState == false) {
+    if (switchUserAccountState === false) {
       updatSewitchUserAccountState(true);
     } else {
       updatSewitchUserAccountState(false);
     }
+  };
+  const toggleSideBar = () => {
+    document
+      .querySelector(".SideBar_Container")
+      .classList.toggle("closeSideBar");
   };
   return (
     <>
@@ -118,6 +123,7 @@ const NavBar = () => {
             <MenuIcon
               className="NavBar_MenuIcon"
               style={{ fontSize: "30px" }}
+              onClick={toggleSideBar}
             />
           </div>
           <NoteIcon

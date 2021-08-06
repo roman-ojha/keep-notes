@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const HomePage = () => {
   const history = useHistory();
-  history.push("/signin");
+  history.push("/u/notes");
   return <></>;
 };
 

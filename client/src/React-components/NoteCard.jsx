@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AddAlertOutlinedIcon from "@material-ui/icons/AddAlertOutlined";
 import GroupAddOutlinedIcon from "@material-ui/icons/GroupAddOutlined";
 import ColorLensOutlinedIcon from "@material-ui/icons/ColorLensOutlined";
@@ -56,7 +56,7 @@ const NoteCard = (props) => {
   };
   const deleteNote = async (event) => {
     let getNoteId = { id: 0 };
-    if (event.target.className != "Card_Note_DeleteNote_Outline") {
+    if (event.target.className !== "Card_Note_DeleteNote_Outline") {
       getNoteId.id = event.target.parentElement.parentElement.id;
     } else {
       getNoteId.id = event.target.id;
@@ -68,6 +68,9 @@ const NoteCard = (props) => {
       },
       body: JSON.stringify(getNoteId),
     });
+    if (res.status === 200) {
+      props.updateNotes();
+    }
   };
   return (
     <>
@@ -81,11 +84,7 @@ const NoteCard = (props) => {
         <div
           className="Card_Note_DeleteNote_Outline"
           style={{ visibility: cardHoverEvent }}
-          onClick={(event) => {
-            deleteNote(event);
-            props.updateNotes();
-            props.updateNotes();
-          }}
+          onClick={deleteNote}
           id={props.id}
         >
           <DeleteIcon className="Card_Note_DeleteNote_icon hoverInner" />
