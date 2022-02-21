@@ -6,7 +6,7 @@
 
 </div>
 
-## UI Interface:
+## User Interface:
 
 [<img src="./Interface/Home.png" alt="app Icon"/>](./Interface/Home.png)
 
