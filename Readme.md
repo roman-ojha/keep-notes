@@ -1,10 +1,14 @@
 <div align="center">
 
-[<h1 style="font-size:60px; width:100%;">Keep-Notes<img src="./appIcon.png" style="width:60px;" alt="app Icon"/></h1>](./appIcon.png)
+[<img src="./appIcon.png" style="width:60px;" alt="app Icon"/><h1 style="font-size:60px; width:100%;">Keep-Notes</h1>](./appIcon.png)
 
 ## Note Taking Application for Better Productivity
 
 </div>
+
+## UI Interface:
+
+[<img src="./Interface/Home.png" alt="app Icon"/>](./Interface/Home.png)
 
 ## Technology Used:
     1. ReactJS : For Client Site
